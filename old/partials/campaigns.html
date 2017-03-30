@@ -1,0 +1,17 @@
+<h1>Campaigns</h1>
+
+<p>{{myCampaigns}}</p>
+
+<table class="table table-bordered table-hover" style="max-width: 600px;">
+    <thead>
+        <td>#</td>
+        <td>Campaign name</td>
+    </thead>
+
+    <tbody>
+        <tr ng-repeat="campaign in campaigns">
+            <td>{{ campaign.id }}</td>
+            <td>{{ campaign.campaign_name }}</td>
+        </tr>
+    </tbody>
+</table>
