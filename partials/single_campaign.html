@@ -24,6 +24,8 @@
                                 <h3 class="panel-title"><i class="fa fa-money fa-fw"></i> Campaigns</h3>
                             </div>
                             <div class="panel-body">
+                                Campaign name: {{ campaigns.campaign.campaign_name }}
+                                <br>
                                 <pre id="custom-spacing">{{ campaigns | json:4 }}</pre>
                             </div>
                         </div>

@@ -41,28 +41,29 @@ app.config(['$routeProvider', function ($routeProvider) {
  */
 app.controller('CampaignsCtrl', function ($scope, $location, $http) {
   console.log("Campaigns Controller reporting for duty.");
-  $http.get("http://localhost:8887/api/v1/campaigns/").then(function(response) {
+  $http.get("http://api.aidtrack.donchev.net/api/v1/campaigns/").then(function(response) {
     $scope.campaigns = response.data;
     console.log(response.data);
   });
 });
 
 app.controller('SingleCampaignCtrl', function ($scope, $location, $http, $routeParams) {
-  $http.get("http://localhost:8887/api/v1/campaigns/id/" + $routeParams.campId).then(function(response) {
+  $http.get("http://api.aidtrack.donchev.net/api/v1/campaigns/id/" + $routeParams.campId).then(function(response) {
     $scope.campaigns = response.data;
+
     console.log(response.data);
   });
 });
 
 app.controller('ShipmentsCtrl', function ($scope, $location, $http) {
-  $http.get("http://localhost:8887/api/v1/shipments/").then(function(response) {
+  $http.get("http://api.aidtrack.donchev.net/api/v1/shipments/").then(function(response) {
     $scope.shipments = response.data;
     console.log(response.data);
   });
 });
 
 app.controller('SingleShipmentCtrl', function ($scope, $location, $http, $routeParams) {
-  $http.get("http://localhost:8887/api/v1/shipments/id/" + $routeParams.shipmentId).then(function(response) {
+  $http.get("http://api.aidtrack.donchev.net/api/v1/shipments/id/" + $routeParams.shipmentId).then(function(response) {
     $scope.shipments = response.data;
     console.log(response.data);
   });
@@ -76,7 +77,7 @@ app.controller('SingleShipmentCtrl', function ($scope, $location, $http, $routeP
 // });
 
 app.controller('SingleItemCtrl', function ($scope, $location, $http, $routeParams) {
-  $http.get("http://localhost:8887/api/v1/items/shipment_id/" + $routeParams.itemId).then(function(response) {
+  $http.get("http://api.aidtrack.donchev.net/api/v1/items/shipment_id/" + $routeParams.itemId).then(function(response) {
     $scope.items = response.data;
     console.log(response.data);
   });
